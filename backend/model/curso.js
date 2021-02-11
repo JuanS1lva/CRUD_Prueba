@@ -5,6 +5,9 @@ const esquemaCurso = new mongoose.Schema({
   duracion: String,
   fechaInicio: String,
   fechaFin: String,
+  sede:String,
+  jornada:String,
+  descripcion:String
 })
 //Creamos los exports
 const Curso = mongoose.model("curso", esquemaCurso)

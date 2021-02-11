@@ -6,7 +6,7 @@ const Curso = require("../model/curso")
 const { Mongoose } = require("mongoose")
 
 router.get('/lista',async(req,res)=>{
-  const curso = await Curso.find({})
+  const curso = await Curso.find()
   res.send(curso)
 })
 
@@ -18,6 +18,9 @@ router.put('/',async(req,res)=>{
       duracion: req.body.duracion,
       fechaInicio: req.body.fechaInicio,
       fechaFin: req.body.fechaFin,
+      sede: req.body.sede,
+      jornada: req.body.jornada,
+      descripcion: req.body.descripcion
     },
     {
       new: true
@@ -44,10 +47,13 @@ router.delete("/:_id", async (req, res) => {
 
 router.post('/' ,async(req,res)=>{
   const curso = new Curso({
-    nombreCurso: req.body.nombre,
+    nombreCurso: req.body.nombreCurso,
     duracion: req.body.duracion,
     fechaInicio: req.body.fechaInicio,
     fechaFin: req.body.fechaFin,
+    sede: req.body.sede,
+    jornada: req.body.jornada,
+    descripcion: req.body.descripcion
   })
   const result = await curso.save()
   res.status(200).send(result)

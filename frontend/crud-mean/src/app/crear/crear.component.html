@@ -1,0 +1,56 @@
+<main>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="">Crear Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="lista">Lista Cursos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <p class="h3">Formulario de Creacion de Cursos.</p>
+  <form class="contenedor-form" (ngSubmit)="registrar()" ngNativeValidate>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Curso</span>
+      <input [(ngModel)]="nuevoCurso.nombreCurso" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Duracion</span>
+      <input [(ngModel)]="nuevoCurso.duracion" [ngModelOptions]="{standalone: true}" type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Inicio</span>
+      <input [(ngModel)]="nuevoCurso.fechaInicio" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Fin</span>
+      <input [(ngModel)]="nuevoCurso.fechaFin" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Sede</span>
+      <input [(ngModel)]="nuevoCurso.sede" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Jornada</span>
+      <input [(ngModel)]="nuevoCurso.jornada" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Descripcion</span>
+      <input [(ngModel)]="nuevoCurso.descripcion" [ngModelOptions]="{standalone: true}" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+    </div>
+    <div class="form-group row justify-content-center">
+      <div class="col-sm-7">
+        <button class="btn-lg btn-block" type="submit">
+          <i class="fas fa-cloud-upload-alt"></i> Guardar Cambios
+        </button>
+      </div>
+    </div>
+  </form>
+</main>
